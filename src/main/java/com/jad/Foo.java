@@ -9,6 +9,7 @@ public class Foo {
     private Qux qux;
     private List<Grault> graults;
     private Corge corge;
+
     public Foo(final Bar bar) {
         this.bar = bar;
         this.bazs = new ArrayList<>();
@@ -27,7 +28,7 @@ public class Foo {
     public void setCorge(final Corge corge) {
         if (this.corge != null) this.corge.setFoo(null);
         this.corge = corge;
-        if (corge.getFoo() != this) corge.setFoo(this);
+        if ((corge != null) && (corge.getFoo() != this)) corge.setFoo(this);
     }
 
     public List<Grault> getGraults() {
